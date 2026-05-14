@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanna Pre-Tax Benefits</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; padding: 24px; }
+  .tab-btn { cursor: pointer; border: 0.5px solid #ccc; background: #fff; border-radius: 8px; padding: 8px 14px; font-size: 13px; color: #555; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+  .tab-btn.active { background: #003B56; border-color: #003B56; color: #fff; font-weight: 500; }
+  .tab-btn:hover:not(.active) { background: #f5f5f5; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .detail-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 0.5px solid #e5e5e5; gap: 16px; }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label { font-size: 13px; color: #666; flex-shrink: 0; }
+  .detail-value { font-size: 13px; font-weight: 500; text-align: right; max-width: 340px; }
+  .stat-card { background: #f5f5f5; border-radius: 8px; padding: 1rem; }
+  .section-label { font-size: 12px; color: #666; margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  p { margin: 0; }
+</style>
+</head>
+<body>
+<div style="max-width: 800px; margin: 0 auto;">
+
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem;">
+    <button class="tab-btn active" onclick="showTab('fsa', this)">Healthcare FSA</button>
+    <button class="tab-btn" onclick="showTab('hsa', this)">HSA</button>
+    <button class="tab-btn" onclick="showTab('lpfsa', this)">Limited Purpose FSA</button>
+    <button class="tab-btn" onclick="showTab('dcfsa', this)">Dependent Care FSA</button>
+  </div>
+
+  <div id="tab-fsa" class="tab-panel active">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-bottom: 1.5rem;">
+      <div class="stat-card"><p class="section-label">2026 limit</p><p style="font-size: 22px; font-weight: 500;">$3,400</p><p style="font-size: 12px; color: #999; margin-top: 4px;">per year</p></div>
+      <div class="stat-card"><p class="section-label">Hanna contribution</p><p style="font-size: 22px; font-weight: 500;">$0</p><p style="font-size: 12px; color: #999; margin-top: 4px;">employee-funded</p></div>
+      <div style="background: #003B56; border-radius: 8px; padding: 1rem;"><p class="section-label" style="color: #BF912F;">tax savings*</p><p style="font-size: 22px; font-weight: 500; color: #fff;">~$850</p><p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">est. at 25% tax rate</p></div>
+    </div>
+    <div style="background: #fff; border-radius: 12px; border: 0.5px solid #e5e5e5; padding: 1.25rem; margin-bottom: 1.25rem;">
+      <div class="detail-row"><span class="detail-label">What is it?</span><span class="detail-value">A pre-tax account to pay for eligible out-of-pocket medical, dental, and vision expenses</span></div>
+      <div class="detail-row"><span class="detail-label">Who is eligible?</span><span class="detail-value">All benefits-eligible employees not enrolled in an HDHP</span></div>
+      <div class="detail-row"><span class="detail-label">Eligible expenses</span><span class="detail-value">Copays, deductibles, prescriptions, glasses, contacts, dental work</span></div>
+      <div class="detail-row"><span class="detail-label">Use it or lose it?</span><span class="detail-value">Yes — funds must be used within the plan year</span></div>
+      <div class="detail-row"><span class="detail-label">Administered by</span><span class="detail-value">Health Equity</span></div>
+    </div>
+    <div style="padding: 10px 14px; background: #EEF3F6; border-radius: 8px; font-size: 13px; color: #003B56;">FSA funds are available in full on day one of your plan year — no need to wait for contributions to accumulate.</div>
+  </div>
+
+  <div id="tab-hsa" class="tab-panel">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-bottom: 1.5rem;">
+      <div class="stat-card"><p class="section-label">2026 limit</p><p style="font-size: 22px; font-weight: 500;">$4,400</p><p style="font-size: 12px; color: #999; margin-top: 4px;">self / $8,750 family</p></div>
+      <div class="stat-card"><p class="section-label">Hanna match</p><p style="font-size: 22px; font-weight: 500;">$600</p><p style="font-size: 12px; color: #999; margin-top: 4px;">when you contribute</p></div>
+      <div style="background: #003B56; border-radius: 8px; padding: 1rem;"><p class="section-label" style="color: #BF912F;">triple tax benefit</p><p style="font-size: 22px; font-weight: 500; color: #fff;">3×</p><p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">contribute, grow & spend tax-free</p></div>
+    </div>
+    <div style="background: #fff; border-radius: 12px; border: 0.5px solid #e5e5e5; padding: 1.25rem; margin-bottom: 1.25rem;">
+      <div class="detail-row"><span class="detail-label">What is it?</span><span class="detail-value">A tax-advantaged savings account for medical expenses — contributions, growth, and withdrawals are all tax-free when used for eligible expenses</span></div>
+      <div class="detail-row"><span class="detail-label">Who is eligible?</span><span class="detail-value">Employees enrolled in Hanna's High Deductible Health Plan (HDHP) only</span></div>
+      <div class="detail-row"><span class="detail-label">Hanna's match</span><span class="detail-value">Up to $600 — you must contribute to receive the match</span></div>
+      <div class="detail-row"><span class="detail-label">Invest your balance?</span><span class="detail-value">Yes — once your balance reaches $2,000 you can invest it for long-term growth</span></div>
+      <div class="detail-row"><span class="detail-label">Rollover?</span><span class="detail-value">Yes — unused funds roll over every year and stay with you</span></div>
+      <div class="detail-row"><span class="detail-label">Administered by</span><span class="detail-value">Health Equity</span></div>
+    </div>
+    <div style="padding: 10px 14px; background: #EEF3F6; border-radius: 8px; font-size: 13px; color: #003B56;">HSAs are one of the only triple tax-advantaged accounts available. Once your balance hits $2,000, you can invest it — making it a powerful long-term retirement healthcare fund.</div>
+  </div>
+
+  <div id="tab-lpfsa" class="tab-panel">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-bottom: 1.5rem;">
+      <div class="stat-card"><p class="section-label">2026 limit</p><p style="font-size: 22px; font-weight: 500;">$3,400</p><p style="font-size: 12px; color: #999; margin-top: 4px;">per year</p></div>
+      <div class="stat-card"><p class="section-label">Hanna contribution</p><p style="font-size: 22px; font-weight: 500;">$0</p><p style="font-size: 12px; color: #999; margin-top: 4px;">employee-funded</p></div>
+      <div style="background: #003B56; border-radius: 8px; padding: 1rem;"><p class="section-label" style="color: #BF912F;">tax savings*</p><p style="font-size: 22px; font-weight: 500; color: #fff;">~$850</p><p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">est. at 25% tax rate</p></div>
+    </div>
+    <div style="background: #fff; border-radius: 12px; border: 0.5px solid #e5e5e5; padding: 1.25rem; margin-bottom: 1.25rem;">
+      <div class="detail-row"><span class="detail-label">What is it?</span><span class="detail-value">A pre-tax account for eligible vision and dental expenses, available to employees on the HDHP</span></div>
+      <div class="detail-row"><span class="detail-label">Who is eligible?</span><span class="detail-value">Employees enrolled in Hanna's High Deductible Health Plan (HDHP) only — an active HSA is not required</span></div>
+      <div class="detail-row"><span class="detail-label">Eligible expenses</span><span class="detail-value">Vision exams, glasses, contacts, dental exams, cleanings, orthodontia</span></div>
+      <div class="detail-row"><span class="detail-label">Can I have this AND an HSA?</span><span class="detail-value">Yes — the LPFSA pairs well with an HSA, letting you use FSA funds for vision and dental while keeping your HSA growing</span></div>
+      <div class="detail-row"><span class="detail-label">Use it or lose it?</span><span class="detail-value">Yes — funds must be used within the plan year</span></div>
+      <div class="detail-row"><span class="detail-label">Administered by</span><span class="detail-value">Health Equity</span></div>
+    </div>
+    <div style="padding: 10px 14px; background: #EEF3F6; border-radius: 8px; font-size: 13px; color: #003B56;">On the HDHP? The LPFSA is a great way to set aside pre-tax dollars specifically for vision and dental costs — no HSA required to enroll.</div>
+  </div>
+
+  <div id="tab-dcfsa" class="tab-panel">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-bottom: 1.5rem;">
+      <div class="stat-card"><p class="section-label">IRS max (household)</p><p style="font-size: 22px; font-weight: 500;">$7,500</p><p style="font-size: 12px; color: #999; margin-top: 4px;">includes Hanna's match</p></div>
+      <div class="stat-card"><p class="section-label">your max contribution</p><p style="font-size: 22px; font-weight: 500;">$5,000</p><p style="font-size: 12px; color: #999; margin-top: 4px;">+ $2,500 from Hanna = $7,500</p></div>
+      <div style="background: #003B56; border-radius: 8px; padding: 1rem;"><p class="section-label" style="color: #BF912F;">Hanna match</p><p style="font-size: 22px; font-weight: 500; color: #fff;">$2,500</p><p style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">$2 for every $1 you contribute</p></div>
+    </div>
+    <div style="background: #fff; border-radius: 12px; border: 0.5px solid #e5e5e5; padding: 1.25rem; margin-bottom: 1.25rem;">
+      <div class="detail-row"><span class="detail-label">What is it?</span><span class="detail-value">A pre-tax account to pay for eligible child or elder care expenses, like daycare, preschool, and after-school programs</span></div>
+      <div class="detail-row"><span class="detail-label">Who is eligible?</span><span class="detail-value">All benefits-eligible employees with qualifying dependents</span></div>
+      <div class="detail-row"><span class="detail-label">How the match works</span><span class="detail-value">Hanna contributes $2 for every $1 you put in, up to $2,500 — your max employee contribution is $5,000, bringing the total to $7,500</span></div>
+      <div class="detail-row"><span class="detail-label">Married filing separately?</span><span class="detail-value">Your IRS limit is $3,750 — Hanna's match still applies within that limit</span></div>
+      <div class="detail-row"><span class="detail-label">Eligible expenses</span><span class="detail-value">Daycare, preschool, after-school care, summer day camps, elder care for qualifying dependents</span></div>
+      <div class="detail-row"><span class="detail-label">Use it or lose it?</span><span class="detail-value">Yes — funds must be used within the plan year</span></div>
+      <div class="detail-row"><span class="detail-label">Administered by</span><span class="detail-value">Health Equity</span></div>
+    </div>
+    <div style="padding: 10px 14px; background: #EEF3F6; border-radius: 8px; font-size: 13px; color: #003B56;">Hanna's $2-for-$1 match is one of the most generous benefits we offer. If you contribute the full $5,000, Hanna adds $2,500 — putting $7,500 toward your dependent care costs for the year.</div>
+  </div>
+
+  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid #e5e5e5; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+    <p style="font-size: 13px; color: #666;">All accounts administered by Health Equity. Enroll during open enrollment or within 30 days of a qualifying life event.</p>
+    <a href="https://www.healthequity.com" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #fff; background: #003B56; text-decoration: none; border-radius: 8px; padding: 8px 14px; white-space: nowrap;">Visit Health Equity ↗</a>
+  </div>
+
+</div>
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
